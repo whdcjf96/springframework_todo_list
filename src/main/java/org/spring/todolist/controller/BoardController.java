@@ -4,7 +4,10 @@ import lombok.RequiredArgsConstructor;
 import org.spring.todolist.dto.BoardDTO;
 import org.spring.todolist.service.BoardService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -26,6 +29,20 @@ public class BoardController {
         }else{
             return "save";
         }
+    }
+
+    @GetMapping("/")
+    public String findAll(Model model){
+       List<BoardDTO> boardDTOList = boardService.findAll();
+       model.addAttribute("boardList",boardDTOList);
+       return "list";
+    }
+
+    @GetMapping
+    public String findById(@RequestParam("id") Long id, Model model){
+        BoardDTO board = boardService.findById(id);
+        model.addAttribute("detail",board);
+        return "detail";
     }
 
 }
