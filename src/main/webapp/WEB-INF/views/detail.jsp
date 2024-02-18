@@ -44,5 +44,19 @@
 
 
 </body>
+<script>
+       const listFn = () => {
+           const page = '${page}';
+           location.href = "/board/paging?page=" + page;
+       }
+       const updateFn = () => {
+           const id = '${detail.id}';
+           location.href = "/board/update?id=" + id;
+       }
+       const deleteFn = () => {
+           const id = '${detail.id}';
+           location.href = "/board/delete?id=" + id;
+       }
+</script>
 
 </html>
