@@ -4,6 +4,6 @@
 <configuration>
     <typeAliases>
         <typeAlias type="org.spring.todolist.dto.BoardDTO" alias="board"></typeAlias>
-<!--        <typeAlias type="com.codingrecipe.board.dto.CommentDTO" alias="comment"></typeAlias>-->
+        <typeAlias type="org.spring.todolist.dto.CommentDTO" alias="comment"></typeAlias>
     </typeAliases>
 </configuration>
